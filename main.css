@@ -1,15 +1,6 @@
 img{
-  /*filter: grayscale(100%);
-  filter: invert(100%);
-  filter: sepia(100%);
-  filter: saturate(10);
-  filter: hue-rotate(90deg);*/
-  border: 1px solid #D8D8D8;
-  border-radius: 5px;
   -webkit-box-shadow: 7px 14px 10px -7px rgba(0,0,0,0.75);
   -moz-box-shadow: 7px 14px 10px -7px rgba(0,0,0,0.75);
   box-shadow: 7px 14px 10px -7px rgba(0,0,0,0.75);
-  margin-top: 4%;
-  margin-left: 25%;
-  
+  margi
 }
