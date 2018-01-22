@@ -1,3 +1,5 @@
+if (typeof window === 'undefined') return;
+
 var assert = require('chai').assert;
 const filter = require('../src/app.js');
 
