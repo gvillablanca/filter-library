@@ -12,6 +12,8 @@ function grayScale(){
   const inverseText = document.createTextNode('Inverse');
   const btnSaturate = document.createElement('button');
   const saturateText = document.createTextNode('Saturate');
+  const btnNormal = document.createElement('button');
+  const normalText = document.createTextNode('Normal');
 
   container.appendChild(imagen);
   newContainer.appendChild(btnGrey);
@@ -24,6 +26,8 @@ function grayScale(){
   btnInverse.appendChild(inverseText);
   newContainer.appendChild(btnSaturate);
   btnSaturate.appendChild(saturateText);
+  newContainer.appendChild(btnNormal);
+  btnNormal.appendChild(normalText);
 
   const currentDiv = document.getElementById('div1');
   document.body.insertBefore(newContainer, currentDiv);
@@ -46,6 +50,15 @@ function grayScale(){
 
   btnSaturate.addEventListener('click', ()=>{
     imagen.style.filter='saturate(10)';
+  });
+
+  btnNormal.addEventListener('click', ()=>{
+    imagen.style.filter='grayscale(0%)';
+    imagen.style.filter='saturate(0)';
+    imagen.style.filter='invert(0%)';
+    imagen.style.filter='hue-rotate(0deg)';
+    imagen.style.filter='sepia(0%)';
+
   });
 }
 
