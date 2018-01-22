@@ -1,4 +1,5 @@
 function grayScale(){  
+  //  creo, aagrego textos y atributos a los elementos nuevos
   const container = document.getElementById('mainContainer');
   const imagen = document.getElementById('img');
   const newContainer = document.createElement('div');
@@ -21,6 +22,7 @@ function grayScale(){
   const normalText = document.createTextNode('Normal');
   btnNormal.setAttribute("class", "btn btn-default");   
 
+  //  apendeo los objetos creados
   container.appendChild(imagen);
   newContainer.appendChild(btnGrey);
   btnGrey.appendChild(greyText);
@@ -35,11 +37,13 @@ function grayScale(){
   newContainer.appendChild(btnNormal);
   btnNormal.appendChild(normalText);
 
+  //  paso todos los elementos creados al body del html
   const currentDiv = document.getElementById('div1');
   document.body.insertBefore(newContainer, currentDiv);
 
   document.body.onload = styleElement;
 
+  //  donde cargo los estilos automaticos que debe llevar la pagina
   function styleElement(){
     newContainer.style.marginLeft = "25%";
     newContainer.style.marginTop = "2%";
@@ -55,7 +59,7 @@ function grayScale(){
     btnNormal.style.marginRight = "2%";
   }  
 
-
+  //  eventos asignados a todos los botones
   btnGrey.addEventListener('click', ()=>{
     imagen.style.filter='grayscale(100%)';
   });
@@ -86,4 +90,5 @@ function grayScale(){
   });
 }
 
+//  llamo la funcion para que se ejecute al cargar la pagina
 grayScale();
