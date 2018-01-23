@@ -19,3 +19,8 @@ Filter es un plugin que permitirá aplicar filtros en imágenes, estos filtros e
 ## Uso y documentación del API
 
 Para poder utilizar este plugin, deberá crear una `section` con `<div>` con la `clase="container"` y un `id="mainContainer"`, este será quien contenga  a la imágen en la que utilizaremos los filtros, esta imágen debe tener un `id="img"`
+
+![Ejemplo de section, clases e id](assets/img/container.jpg)
+
+A través de DOM se crearán los botones con los filtros respectivos
+![Ejemplo de creacion de botones de filtros](assets/img/buttonsFilter.jpg)
