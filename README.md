@@ -10,7 +10,7 @@ Filter es un plugin que permitirá aplicar filtros en imágenes, estos filtros e
 + Inverso: convertirá la fotografía a negativo.
 + Saturar: intensificará los colores de la imágen.
 
-![Filter](https://ibb.co/h1K3jG)
+![Filter](assets/img/filter_muestra.jpg)
 
 ## Instrucciones de instalación
 
