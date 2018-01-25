@@ -70,30 +70,55 @@ function greyScale () {
   btnGrey.addEventListener('click', ()=>{
     container.style.filter ='grayscale(100%)';
   });
+  if (container.style.filter === 'grayscale(100%)'){
+    return true;
+  } else {
+    return false;
+  }
 }
 
 function sepia () {
   btnSepia.addEventListener('click', ()=>{
     container.style.filter ='sepia(100%)';
   });
+  if (container.style.filter === 'sepia(100%)'){
+    return true;
+  } else {
+    return false;
+  }
 }
 
 function hueRotate () {
    btnHueRotate.addEventListener('click', ()=>{
     container.style.filter ='hue-rotate(90deg)';
   });
+   if (container.style.filter === 'hue-rotate(90deg)'){
+    return true;
+  } else {
+    return false;
+  }
 }
 
 function inverse() {
   btnInverse.addEventListener('click', ()=>{
-    container.style.filter ='invert(100%)';
+    container.style.filter ='';
   }); 
+  if (container.style.filter === 'invert(100%)'){
+    return true;
+  } else {
+    return false;
+  }
 }
 
 function saturate () {
    btnSaturate.addEventListener('click', ()=>{
     container.style.filter ='saturate(10)';
   });
+   if (container.style.filter === 'saturate(10)'){
+    return true;
+  } else {
+    return false;
+  }
 }
 
 function normal () {
@@ -103,7 +128,6 @@ function normal () {
     container.style.filter ='invert(0%)';
     container.style.filter = 'hue-rotate(0deg)';
     container.style.filter ='sepia(0%)';
-
   });
 }
 
