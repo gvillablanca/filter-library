@@ -1,5 +1,4 @@
  const filterLibrary = {};
-
   //  creo, agrego textos y atributos a los elementos nuevos
   const container = document.getElementById('mainContainer');
   const imagen = document.getElementsByTagName('img');
@@ -25,8 +24,7 @@
   btnSaturate.setAttribute('class', 'btn btn-default');
   const btnNormal = document.createElement('button');
   const normalText = document.createTextNode('Normal');
-  btnNormal.setAttribute('class', 'btn btn-default');   
-
+  btnNormal.setAttribute('class', 'btn btn-default'); 
   //  apendeo los objetos creados
   body.appendChild(container);  
   body.appendChild(newContainer);
@@ -42,23 +40,19 @@
   btnSaturate.appendChild(saturateText);
   newContainer.appendChild(btnNormal);
   btnNormal.appendChild(normalText);
-
   /*  coloco un for para apendear cada imagen 
   *   que va apareciendo en el arreglo porque 
   *   no puedo pasar un arreglo con cosas dentro 
   *   a un contenedor, debo pasarlas de 1 en 1
   */
-  for (var i = 0; i < imagen.length; i++) {
+  for (let i = 0; i < imagen.length; i++) {
       container.appendChild(imagen[i]);
   }
-
   //  paso todos los elementos creados al body del html
    document.body.appendChild(newContainer);
-
   //  donde cargo los estilos automaticos que debe llevar la pagina
   document.body.onload = styleElement;
-
-  function styleElement() {
+  function styleElement(element) {
     newContainer.style.marginLeft = '25%';
     newContainer.style.marginTop = '2%';
     btnGrey.style.marginRight = '2%';
@@ -68,89 +62,77 @@
     btnSaturate.style.marginRight = '2%';
     btnNormal.style.marginRight = '2%';
   } 
-
   /* separacion del codigo para poder trabajar 
   *  en partes y no solo 1 funcion que contenga 
   *  todo, de este modo actualizamos de mejor 
   *  manera el trabajo en el test
   */
-  filterLibrary.greyFunction = function () {
+  filterLibrary.greyFunction = function (event) {
     btnGrey.addEventListener('click', ()=>{
-      container.style.filter ='grayscale(100%)';
-    });
-    if (container.style.filter === 'grayscale(100%)'){
-        return true;
-    } else {
-        return false;
-    }
-  }  
-
-  filterLibrary.sepiaFunction = function () {
+        for (let i = 0; i < imagen.length; i++){      
+          imagen[i].style.filter ='grayscale(100%)';
+          console.log('colores en escala de grises');          
+        }      
+      });
+    }    
+  
+  filterLibrary.sepiaFunction = function (event) {
     btnSepia.addEventListener('click', ()=>{
-      container.style.filter ='sepia(100%)';
+      for (let i = 0; i < imagen.length; i++){
+        imagen[i].style.filter ='sepia(100%)';
+        console.log('colores en sepia');
+      }      
     });
-    if (container.style.filter === 'sepia(100%)'){
-      return true;
-    } else {
-      return false;
-    }
   }
-
-  filterLibrary.hueFunction = function () {
+  filterLibrary.hueFunction = function (event) {
      btnHueRotate.addEventListener('click', ()=>{
-      container.style.filter ='hue-rotate(90deg)';
+      for(let i = 0; i< imagen.length; i++){
+        imagen[i].style.filter ='hue-rotate(90deg)';
+        console.log('colores hue-rotate');
+      }      
     });
-     if (container.style.filter === 'hue-rotate(90deg)'){
-      return true;
-    } else {
-      return false;
-    }
   }
-
-  filterLibrary.inverseFilter = function () {
+  filterLibrary.inverseFilter = function (event) {
     btnInverse.addEventListener('click', ()=>{
-      container.style.filter ='';
+      for(let i = 0; i< imagen.length; i++){
+        imagen[i].style.filter ='invert(100%)';
+        console.log('colores invertidos');
+      }      
     }); 
-    if (container.style.filter === 'invert(100%)'){
-      return true;
-    } else {
-      return false;
-    }
   }
-
-  filterLibrary.saturateFunction = function () {
+  filterLibrary.saturateFunction = function (event) {
      btnSaturate.addEventListener('click', ()=>{
-      container.style.filter ='saturate(10)';
-    });
-     if (container.style.filter === 'saturate(10)'){
-      return true;
-    } else {
-      return false;
-    }
-  }
-
-  filterLibrary.normalFunction = function () {
-     btnNormal.addEventListener('click', ()=>{
-      container.style.filter ='grayscale(0%)';
-      container.style.filter ='saturate(0)';
-      container.style.filter ='invert(0%)';
-      container.style.filter = 'hue-rotate(0deg)';
-      container.style.filter ='sepia(0%)';
-    });
-  }
-
-filterLibrary.filterFunction = function () {  
-  //  recorrer array para selecionar imagen que quiero trabajar
-
-  /*
-  imagen.addEventListener('click', ()=>{
-    for (var i = 0; i < imagen.length; i++) {
+      for(let i = 0; i < imagen.length; i++){
+        imagen[i].style.filter ='saturate(10)';
+        console.log('colores saturado');
+      }
       
+    });
+  }
+  filterLibrary.normalFunction = function (event) {
+     btnNormal.addEventListener('click', ()=>{
+      for(let i = 0; i < imagen.length; i++){
+        imagen[i].style.filter ='grayscale(0%)';
+        imagen[i].style.filter ='saturate(0)';
+        imagen[i].style.filter ='invert(0%)';
+        imagen[i].style.filter = 'hue-rotate(0deg)';
+        imagen[i].style.filter ='sepia(0%)';
+        console.log('colores normales');
+      }      
+    });
+  }
+  /* es6 funciones
+  *
+  */
+filterLibrary.filterFunction = function (event) {  
+  //  recorrer array para selecionar imagen que quiero trabajar
+  /*
+  imagen[i].addEventListener('click', ()=>{
+    for (let i = 0; i < imagen.length; i++) {      
     }
   });
   */
 }
-
   //  eventos asignados a todos los botones  
   filterLibrary.greyFunction();
   filterLibrary.sepiaFunction();
@@ -159,10 +141,12 @@ filterLibrary.filterFunction = function () {
   filterLibrary.saturateFunction();
   filterLibrary.normalFunction();
   filterLibrary.filterFunction();
-
 //  llamo la funcion para que se ejecute al cargar la pagina
   filterLibrary.filterFunction();
-
-
 //  exportar para que se pueda usar en otro js
-module.exports = filterLibrary;
+//  es5 export
+if(typeof exports !== 'undefined') {
+   exports.filterLibrary = filterLibrary;
+}
+// es6
+//module.exports = filterLibrary;
