@@ -43,6 +43,11 @@
   newContainer.appendChild(btnNormal);
   btnNormal.appendChild(normalText);
 
+  /*  coloco un for para apendear cada imagen 
+  *   que va apareciendo en el arreglo porque 
+  *   no puedo pasar un arreglo con cosas dentro 
+  *   a un contenedor, debo pasarlas de 1 en 1
+  */
   for (var i = 0; i < imagen.length; i++) {
       container.appendChild(imagen[i]);
   }
@@ -52,6 +57,7 @@
 
   //  donde cargo los estilos automaticos que debe llevar la pagina
   document.body.onload = styleElement;
+
   function styleElement() {
     newContainer.style.marginLeft = '25%';
     newContainer.style.marginTop = '2%';
@@ -68,7 +74,7 @@
   *  todo, de este modo actualizamos de mejor 
   *  manera el trabajo en el test
   */
-  function greyScale () {
+  filterLibrary.greyFunction = function () {
     btnGrey.addEventListener('click', ()=>{
       container.style.filter ='grayscale(100%)';
     });
@@ -79,7 +85,7 @@
     }
   }  
 
-  function sepia () {
+  filterLibrary.sepiaFunction = function () {
     btnSepia.addEventListener('click', ()=>{
       container.style.filter ='sepia(100%)';
     });
@@ -90,7 +96,7 @@
     }
   }
 
-  function hueRotate () {
+  filterLibrary.hueFunction = function () {
      btnHueRotate.addEventListener('click', ()=>{
       container.style.filter ='hue-rotate(90deg)';
     });
@@ -101,7 +107,7 @@
     }
   }
 
-  function inverse() {
+  filterLibrary.inverseFilter = function () {
     btnInverse.addEventListener('click', ()=>{
       container.style.filter ='';
     }); 
@@ -112,7 +118,7 @@
     }
   }
 
-  function saturate () {
+  filterLibrary.saturateFunction = function () {
      btnSaturate.addEventListener('click', ()=>{
       container.style.filter ='saturate(10)';
     });
@@ -123,7 +129,7 @@
     }
   }
 
-  function normal () {
+  filterLibrary.normalFunction = function () {
      btnNormal.addEventListener('click', ()=>{
       container.style.filter ='grayscale(0%)';
       container.style.filter ='saturate(0)';
@@ -133,25 +139,29 @@
     });
   }
 
-filterLibrary.filterFunction =function() {  
+filterLibrary.filterFunction = function () {  
   //  recorrer array para selecionar imagen que quiero trabajar
+
   /*
   imagen.addEventListener('click', ()=>{
     for (var i = 0; i < imagen.length; i++) {
       
     }
-  });*/
-  //  eventos asignados a todos los botones  
-  greyScale(); 
-  sepia();
-  hueRotate();
-  inverse();
-  saturate();
-  normal();
+  });
+  */
 }
 
+  //  eventos asignados a todos los botones  
+  filterLibrary.greyFunction();
+  filterLibrary.sepiaFunction();
+  filterLibrary.hueFunction();
+  filterLibrary.inverseFilter();
+  filterLibrary.saturateFunction();
+  filterLibrary.normalFunction();
+  filterLibrary.filterFunction();
+
 //  llamo la funcion para que se ejecute al cargar la pagina
-filterLibrary.filterFunction();
+  filterLibrary.filterFunction();
 
 
 //  exportar para que se pueda usar en otro js

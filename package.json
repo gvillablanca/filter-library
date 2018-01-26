@@ -4,7 +4,7 @@
   "description": "plugin que aplica filtros a las imagenes en un contenedor",
   "main": "index.js",
   "scripts": {
-    "test": "mocha"
+    "test": "mocha test --reporter nyan"
   },
   "repository": {
     "type": "git",
