@@ -2,7 +2,7 @@
   //  creo, agrego textos y atributos a los elementos nuevos
   const container = document.getElementById('mainContainer');
   const imagen = document.getElementsByTagName('img');
-  console.log(imagen);
+  console.log(imagen);  
   //const imagen = document.querySelectorAll('img');
   const body = document.getElementById('body');
   const newContainer = document.createElement('div');
@@ -71,16 +71,26 @@
     btnGrey.addEventListener('click', ()=>{
         for (let i = 0; i < imagen.length; i++){      
           imagen[i].style.filter ='grayscale(100%)';
-          console.log('colores en escala de grises');          
+          const atributo = imagen[i].getAttribute('style');
+            if (atributo !== '') {
+              console.log('no hay atributo');
+            } else {
+              console.log('imagen gris');
+            }          
         }      
-      });
-    }    
+    });
+  }    
   
   filterLibrary.sepiaFunction = function (event) {
     btnSepia.addEventListener('click', ()=>{
       for (let i = 0; i < imagen.length; i++){
         imagen[i].style.filter ='sepia(100%)';
-        console.log('colores en sepia');
+        const atributo = imagen[i].getAttribute('style');
+        if (atributo !== '') {
+          console.log('no hay atributo');
+        } else {
+          console.log('imagen sepia');
+        }
       }      
     });
   }
@@ -88,7 +98,12 @@
      btnHueRotate.addEventListener('click', ()=>{
       for(let i = 0; i< imagen.length; i++){
         imagen[i].style.filter ='hue-rotate(90deg)';
-        console.log('colores hue-rotate');
+        const atributo = imagen[i].getAttribute('style');
+        if (atributo !== '') {
+          console.log('no hay atributo');
+        } else {
+          console.log('imagen hue rotate');
+        }
       }      
     });
   }
@@ -96,7 +111,12 @@
     btnInverse.addEventListener('click', ()=>{
       for(let i = 0; i< imagen.length; i++){
         imagen[i].style.filter ='invert(100%)';
-        console.log('colores invertidos');
+        const atributo = imagen[i].getAttribute('style');
+        if (atributo !== '') {
+          console.log('no hay atributo');
+        } else {
+          console.log('imagen inversa');
+        }
       }      
     }); 
   }
@@ -104,9 +124,13 @@
      btnSaturate.addEventListener('click', ()=>{
       for(let i = 0; i < imagen.length; i++){
         imagen[i].style.filter ='saturate(10)';
-        console.log('colores saturado');
-      }
-      
+        const atributo = imagen[i].getAttribute('style');
+        if (atributo !== '') {
+          console.log('no hay atributo');
+        } else {
+          console.log('imagen saturada');
+        }
+      }      
     });
   }
   filterLibrary.normalFunction = function (event) {
@@ -117,22 +141,21 @@
         imagen[i].style.filter ='invert(0%)';
         imagen[i].style.filter = 'hue-rotate(0deg)';
         imagen[i].style.filter ='sepia(0%)';
-        console.log('colores normales');
+        const atributo = imagen[i].getAttribute('style');
+        if (atributo !== '') {
+          console.log('no hay atributo');
+        } else {
+          console.log('imagen normal');
+        }
       }      
     });
   }
   /* es6 funciones
   *
   */
-filterLibrary.filterFunction = function (event) {  
-  //  recorrer array para selecionar imagen que quiero trabajar
-  /*
-  imagen[i].addEventListener('click', ()=>{
-    for (let i = 0; i < imagen.length; i++) {      
-    }
-  });
-  */
-}
+
+  //  funcion para capturar el atributo de las imagenes
+
   //  eventos asignados a todos los botones  
   filterLibrary.greyFunction();
   filterLibrary.sepiaFunction();
@@ -140,9 +163,6 @@ filterLibrary.filterFunction = function (event) {
   filterLibrary.inverseFilter();
   filterLibrary.saturateFunction();
   filterLibrary.normalFunction();
-  filterLibrary.filterFunction();
-//  llamo la funcion para que se ejecute al cargar la pagina
-  filterLibrary.filterFunction();
 //  exportar para que se pueda usar en otro js
 //  es5 export
 if(typeof exports !== 'undefined') {
