@@ -73,9 +73,9 @@
           imagen[i].style.filter ='grayscale(100%)';
           const atributo = imagen[i].getAttribute('style');
             if (atributo !== '') {
-              console.log('no hay atributo');
+              console.log(atributo);
             } else {
-              console.log('imagen gris');
+              console.log('no hay atributo');
             }          
         }      
     });
@@ -87,9 +87,9 @@
         imagen[i].style.filter ='sepia(100%)';
         const atributo = imagen[i].getAttribute('style');
         if (atributo !== '') {
-          console.log('no hay atributo');
+          console.log(atributo);
         } else {
-          console.log('imagen sepia');
+          console.log('no hay atributo');
         }
       }      
     });
@@ -100,9 +100,9 @@
         imagen[i].style.filter ='hue-rotate(90deg)';
         const atributo = imagen[i].getAttribute('style');
         if (atributo !== '') {
-          console.log('no hay atributo');
+          console.log(atributo);
         } else {
-          console.log('imagen hue rotate');
+          console.log('no hay atributo');
         }
       }      
     });
@@ -113,9 +113,9 @@
         imagen[i].style.filter ='invert(100%)';
         const atributo = imagen[i].getAttribute('style');
         if (atributo !== '') {
-          console.log('no hay atributo');
+          console.log(atributo);
         } else {
-          console.log('imagen inversa');
+          console.log('no hay atributo');
         }
       }      
     }); 
@@ -126,26 +126,26 @@
         imagen[i].style.filter ='saturate(10)';
         const atributo = imagen[i].getAttribute('style');
         if (atributo !== '') {
-          console.log('no hay atributo');
+          console.log(atributo);
         } else {
-          console.log('imagen saturada');
+          console.log('no hay atributo');
         }
       }      
     });
   }
   filterLibrary.normalFunction = function (event) {
      btnNormal.addEventListener('click', ()=>{
-      for(let i = 0; i < imagen.length; i++){
+      for(let i = 0; i < imagen.length; i++){ // con un for recorro todas las imagenes que hayan al hacer click y vuelvo todo a 0
         imagen[i].style.filter ='grayscale(0%)';
         imagen[i].style.filter ='saturate(0)';
         imagen[i].style.filter ='invert(0%)';
         imagen[i].style.filter = 'hue-rotate(0deg)';
         imagen[i].style.filter ='sepia(0%)';
-        const atributo = imagen[i].getAttribute('style');
-        if (atributo !== '') {
-          console.log('no hay atributo');
-        } else {
+        const atributo = imagen[i].getAttribute('style'); // capturo el atributo dentro de la funcion click
+        if (atributo !== '') { //  verifico que si se creo el atributo retorne imagen normal
           console.log('imagen normal');
+        } else {  //  en caso contrario, decir que no hay atributo
+          console.log('no hay atributo');
         }
       }      
     });
@@ -153,8 +153,6 @@
   /* es6 funciones
   *
   */
-
-  //  funcion para capturar el atributo de las imagenes
 
   //  eventos asignados a todos los botones  
   filterLibrary.greyFunction();
