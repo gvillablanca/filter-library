@@ -71,12 +71,13 @@
     btnGrey.addEventListener('click', ()=>{
         for (let i = 0; i < imagen.length; i++){      
           imagen[i].style.filter ='grayscale(100%)';
-          const atributo = imagen[i].getAttribute('style');
-            if (atributo !== "") {
-              console.log(atributo);
-           } else {
-              console.log('no hay atributo');
-            }        
+          const atributo = imagen[i].getAttribute('style');          
+            if (atributo !== '') {
+              const arrAttr = [atributo];
+              console.log(arrAttr);
+            } else {
+              const arrAttr = [''];
+            }          
         }      
     });
   }    
@@ -87,10 +88,11 @@
         imagen[i].style.filter ='sepia(100%)';
         const atributo = imagen[i].getAttribute('style');
         if (atributo !== '') {
-          console.log(atributo);
-        } else {
-          console.log('no hay atributo');
-        }
+              const arrAttr = [atributo];
+              console.log(arrAttr);
+            } else {
+              const arrAttr = [''];
+            }
       }      
     });
   }
@@ -100,10 +102,11 @@
         imagen[i].style.filter ='hue-rotate(90deg)';
         const atributo = imagen[i].getAttribute('style');
         if (atributo !== '') {
-          console.log(atributo);
-        } else {
-          console.log('no hay atributo');
-        }
+              const arrAttr = [atributo];
+              console.log(arrAttr);
+            } else {
+              const arrAttr = [''];
+            }
       }      
     });
   }
@@ -113,10 +116,11 @@
         imagen[i].style.filter ='invert(100%)';
         const atributo = imagen[i].getAttribute('style');
         if (atributo !== '') {
-          console.log(atributo);
-        } else {
-          console.log('no hay atributo');
-        }
+              const arrAttr = [atributo];
+              console.log(arrAttr);
+            } else {
+              const arrAttr = [''];
+            }
       }      
     }); 
   }
@@ -126,10 +130,11 @@
         imagen[i].style.filter ='saturate(10)';
         const atributo = imagen[i].getAttribute('style');
         if (atributo !== '') {
-          console.log(atributo);
-        } else {
-          console.log('no hay atributo');
-        }
+              const arrAttr = [atributo];
+              console.log(arrAttr);
+            } else {
+              const arrAttr = [''];
+            }
       }      
     });
   }
@@ -142,16 +147,15 @@
         imagen[i].style.filter = 'hue-rotate(0deg)';
         imagen[i].style.filter ='sepia(0%)';
         const atributo = imagen[i].getAttribute('style'); // capturo el atributo dentro de la funcion click
-        if (atributo !== '') { //  verifico que si se creo el atributo retorne imagen normal
-          console.log('imagen normal');
-        } else {  //  en caso contrario, decir que no hay atributo
-          console.log('no hay atributo');
-        }
+        if (atributo !== '') {
+              const arrAttr = [atributo];
+              console.log(arrAttr);
+            } else {
+              const arrAttr = [''];
+            }
       }      
     });
   }
-
-
   /* es6 funciones
   *
   */
@@ -166,7 +170,7 @@
 //  exportar para que se pueda usar en otro js
 //  es5 export
 if(typeof exports !== 'undefined') {
-   module.exports = filterLibrary;
+   exports.filterLibrary = filterLibrary;
 }
 // es6
 //module.exports = filterLibrary;
