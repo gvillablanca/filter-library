@@ -1,10 +1,37 @@
 if (typeof window === 'undefined') return;
 
+const assert = require('assert');
+const filterLibrary = require('../src/app');
 
-const assert = require('chai').assert;
+describe('greyFunction()',()=>{
+	it('debería devolver true para cuando se imprima en consola el atributo',()=>{
+		chia.assert.equal(true, filterLibrary.greyFunction(atributo));
+	});
+		
+	it('debería devolver false para cuando se imprima en consola el string "no hay atributo"',()=>{
+		chia.assert.equal(false, filterLibrary.greyFunction('no hay atributo'));
+	});
+});
+
+
+
+/*const assert = require('chai').assert;
+const filterLibrary = require('./src/app');
+
+describe('filterLibrary.greyFunction()',()=>{
+	it('debería devolver true para cuando se imprima en consola el atributo',()=>{
+		chai.assert.isTrue(true, filterLibrary.greyFunction(atributo));
+	});
+		
+	it('debería devolver false para cuando se imprima en consola el string "no hay atributo"',()=>{
+		chai.assert.equal(false, filterLibrary.greyFunction('no hay atributo'));
+	});
+});*/
+
+/*const assert = require('chai').assert;
 const filterLibrary = require('./src/app.js');
 
-describe('filterLibrary()', ()=>{
+describe('filterLibrary.greyFunction()', ()=>{
 	it('debería devolver true para cuando se imprima en consola el atributo',()=>{
 		chai.assert.equal(true, console.log(atributo));
 	});
@@ -12,7 +39,7 @@ describe('filterLibrary()', ()=>{
 	it('debería devolver false para cuando se imprima en consola el string "no hay atributo"',()=>{
 		chai.assert.equal(false, console.log('no hay atributo'));
 	});
-});
+});*/
 
 
 

@@ -72,11 +72,11 @@
         for (let i = 0; i < imagen.length; i++){      
           imagen[i].style.filter ='grayscale(100%)';
           const atributo = imagen[i].getAttribute('style');
-            if (atributo !== '') {
+            if (atributo !== "") {
               console.log(atributo);
-            } else {
+           } else {
               console.log('no hay atributo');
-            }          
+            }        
         }      
     });
   }    
@@ -151,7 +151,7 @@
     });
   }
 
-  
+
   /* es6 funciones
   *
   */
@@ -166,7 +166,7 @@
 //  exportar para que se pueda usar en otro js
 //  es5 export
 if(typeof exports !== 'undefined') {
-   exports.filterLibrary = filterLibrary;
+   module.exports = filterLibrary;
 }
 // es6
 //module.exports = filterLibrary;
