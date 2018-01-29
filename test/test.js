@@ -1,74 +1,10 @@
 if (typeof window === 'undefined') return;
 
-const assert = require('assert');
+var assert = require('chai').assert;
 const filterLibrary = require('../src/app');
 
-describe('greyFunction()',()=>{
-	it('debería devolver true para cuando se imprima en consola el atributo',()=>{
-		chia.assert.equal(true, filterLibrary.greyFunction(atributo));
-	});
-		
-	it('debería devolver false para cuando se imprima en consola el string "no hay atributo"',()=>{
-		chia.assert.equal(false, filterLibrary.greyFunction('no hay atributo'));
-	});
-});
-
-
-
-/*const assert = require('chai').assert;
-const filterLibrary = require('./src/app');
-
-describe('filterLibrary.greyFunction()',()=>{
-	it('debería devolver true para cuando se imprima en consola el atributo',()=>{
-		chai.assert.isTrue(true, filterLibrary.greyFunction(atributo));
-	});
-		
-	it('debería devolver false para cuando se imprima en consola el string "no hay atributo"',()=>{
-		chai.assert.equal(false, filterLibrary.greyFunction('no hay atributo'));
-	});
-});*/
-
-/*const assert = require('chai').assert;
-const filterLibrary = require('./src/app.js');
-
-describe('filterLibrary.greyFunction()', ()=>{
-	it('debería devolver true para cuando se imprima en consola el atributo',()=>{
-		chai.assert.equal(true, console.log(atributo));
-	});
-		
-	it('debería devolver false para cuando se imprima en consola el string "no hay atributo"',()=>{
-		chai.assert.equal(false, console.log('no hay atributo'));
-	});
-});*/
-
-
-
-/*const assert = require('chai').assert;
-const filterLibrary = require('./src/app.js');
-
-
-
-describe('filterLibrary()', ()=>{
-	it('debería devolver true para cuando se imprima en consola el string "atributo"',()=>{
-		chai.assert.equal(true, filterLibrary.greyFunction(atributo));
-	});
-		
-	it('debería devolver false para cuando se imprima en consola el string "no hay atributo"',()=>{
-		chai.assert.equal(false, filterLibrary.greyFunction('no hay atributo'));
-	});
-});*/
-
-
-/*var assert = require('chai').assert;
-const greyScale = require('../src/app');
-
-describe('filterLibrary.greyFunction()', () => {
+describe('filter()', () => {
   it('debería poner gris la imagen', () =>{
-<<<<<<< HEAD
-    chai.assert.equal(filterLibrary.greyFunction('grayscale(100%)'), true);
-    chai.assert.equal(filterLibrary.greyFunction('grayscale(0%)'), false);
-  });
-=======
     assert.equal(filterLibrary.greyFunction(atributo !== ''), true);
     assert.equal(filterLibrary.greyFunction(atributo === ''), false);
   });
@@ -138,27 +74,11 @@ describe('filterLibrary.greyFunction()', () => {
     chai.assert.equal(filterLibrary.greyFunction('grayscale(100%)'), true);
     chai.assert.equal(filterLibrary.greyFunction('grayscale(0%)'), false);
   });
->>>>>>> implementacion array para probar test
 });*/
 
 
 /*const filterLibrary = require('./src/app.js');
 const assertEqual = (filterLibrary.greyFunction(), atributo)=>{
-<<<<<<< HEAD
-	if(filterLibrary.greyFunction !== atributo) {
-		throw new error ('expected '${value} ' to equal ' ${expected});
-	}
-}
-
-describe('filterLibrary()', ()=>{
-	it('debería devolver true para cuando se imprima en consola el string "atributo"',()=>{
-		chai.assert.equal(true, filterLibrary.greyFunction(atributo));
-	});
-		
-	it('debería devolver false para cuando se imprima en consola el string "no hay atributo"',()=>{
-		chai.assert.equal(false, filterLibrary.greyFunction('no hay atributo'));
-	});
-=======
   if(filterLibrary.greyFunction !== atributo) {
     throw new error ('expected '${value} ' to equal ' ${expected});
   }
@@ -172,7 +92,6 @@ describe('filterLibrary()', ()=>{
   it('debería devolver false para cuando se imprima en consola el string "no hay atributo"',()=>{
     chai.assert.equal(false, filterLibrary.greyFunction('no hay atributo'));
   });
->>>>>>> implementacion array para probar test
 });
 */
 
@@ -181,17 +100,6 @@ describe('filterLibrary()', ()=>{
 var grayScale = require('../src/app.js');
 
 describe('greyFunction()', ()=> {
-<<<<<<< HEAD
-	it('debería retornar true si el container tiene el filter grayscale en 100', ()=>{
-		assert.equal(true, grayScale.greyFunction(console.log('colores en escala de grises'));
-	});
-	it('debería retornar false si el container tiene el filter gray scale en 0', ()=>{
-		assert.equal(false, grayScale.greyFunction('grayscale', 0));
-	});
-});*/
-
-
-=======
   it('debería retornar true si el container tiene el filter grayscale en 100', ()=>{
     assert.equal(true, grayScale.greyFunction(console.log('colores en escala de grises'));
   });
@@ -199,7 +107,3 @@ describe('greyFunction()', ()=> {
     assert.equal(false, grayScale.greyFunction('grayscale', 0));
   });
 });*/
-
-
-
->>>>>>> implementacion array para probar test
