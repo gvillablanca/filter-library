@@ -1,109 +1,42 @@
-if (typeof window === 'undefined') return;
+const chai = require('chai');
+const expect = chai.expect;
+const sum = require('../src/app-test.js');
 
-var assert = require('chai').assert;
-const filterLibrary = require('../src/app');
+describe('Validador de suma', () => {
+ it('Debe retornar Error, si uno de los dos parametros no existe', () => {
+   chai.assert.equal(sum.validate(3, null), 'Error');
+   chai.assert.equal(sum.validate(null, 5), 'Error');
+   chai.assert.equal(sum.validate(2, undefined), 'Error');
+   chai.assert.equal(sum.validate(undefined, 10), 'Error');
+   //expect(sum.validate(3, null)).to.be.equal('Error');
+ });
 
-describe('filter()', () => {
-  it('debería poner gris la imagen', () =>{
-    assert.equal(filterLibrary.greyFunction(atributo !== ''), true);
-    assert.equal(filterLibrary.greyFunction(atributo === ''), false);
-  });
+ it('Debe devolver la suma de dos numeros', () => {
+   expect(sum.validate(2, 5)).to.be.equal(7);
+ });
 });
 
-describe('greyFunction()',()=>{
-  it('debería devolver true para cuando se imprima en consola el atributo',()=>{
-    chia.assert.equal(true, filterLibrary.greyFunction(atributo));
-  });
-    
-  it('debería devolver false para cuando se imprima en consola el string "no hay atributo"',()=>{
-    chia.assert.equal(false, filterLibrary.greyFunction('no hay atributo'));
-  });
-});
+//if (typeof window === 'undefined') return;
+/*
+const jsdom = require("jsdom");
+const {JSDOM} = jsdom;
 
+let dom = new JSDOM('<!DOCTYPE html><html lang="en">' +
+    '<head><meta charset="UTF-8"><title>Cardify</title>' +
+    '</head><body><div class="cardify"><h2>Prueba 1</h2>' +
+    '<img src="https://pbs.twimg.com/media/ClFixn2UoAA85OZ.jpg" alt="Osito">' +
+    '<img src="https://78.media.tumblr.com/7abd3b7ae58a290dbf509e9c' +
+    '39427f47/tumblr_mjgkiuTCQJ1s7mg7ko5_500.gif" alt="León">' +
+    '<img class="img" src="http://japonpop.japonshop.com/wp-content/uploads/' +
+    '2014/10/arte-latte-japon-gatos-japonshop03.png" alt="gato">' +
+    '</script><script src="lib/main.js"></script></body></html>', {runScripts:"outside-only"});
 
-
-/*const assert = require('chai').assert;
-const filterLibrary = require('./src/app');
-
-describe('filterLibrary.greyFunction()',()=>{
-  it('debería devolver true para cuando se imprima en consola el atributo',()=>{
-    chai.assert.isTrue(true, filterLibrary.greyFunction(atributo));
-  });
-    
-  it('debería devolver false para cuando se imprima en consola el string "no hay atributo"',()=>{
-    chai.assert.equal(false, filterLibrary.greyFunction('no hay atributo'));
-  });
-});*/
-
-/*const assert = require('chai').assert;
-const filterLibrary = require('./src/app.js');
-
-describe('filterLibrary.greyFunction()', ()=>{
-  it('debería devolver true para cuando se imprima en consola el atributo',()=>{
-    chai.assert.equal(true, console.log(atributo));
-  });
-    
-  it('debería devolver false para cuando se imprima en consola el string "no hay atributo"',()=>{
-    chai.assert.equal(false, console.log('no hay atributo'));
-  });
-});*/
-
-
-
-/*const assert = require('chai').assert;
-const filterLibrary = require('./src/app.js');
-
-
-
-describe('filterLibrary()', ()=>{
-  it('debería devolver true para cuando se imprima en consola el string "atributo"',()=>{
-    chai.assert.equal(true, filterLibrary.greyFunction(atributo));
-  });
-    
-  it('debería devolver false para cuando se imprima en consola el string "no hay atributo"',()=>{
-    chai.assert.equal(false, filterLibrary.greyFunction('no hay atributo'));
-  });
-});*/
-
-
-/*var assert = require('chai').assert;
-const greyScale = require('../src/app');
-
-describe('filterLibrary.greyFunction()', () => {
-  it('debería poner gris la imagen', () =>{
-    chai.assert.equal(filterLibrary.greyFunction('grayscale(100%)'), true);
-    chai.assert.equal(filterLibrary.greyFunction('grayscale(0%)'), false);
-  });
-});*/
-
-
-/*const filterLibrary = require('./src/app.js');
-const assertEqual = (filterLibrary.greyFunction(), atributo)=>{
-  if(filterLibrary.greyFunction !== atributo) {
-    throw new error ('expected '${value} ' to equal ' ${expected});
-  }
-}
-
-describe('filterLibrary()', ()=>{
-  it('debería devolver true para cuando se imprima en consola el string "atributo"',()=>{
-    chai.assert.equal(true, filterLibrary.greyFunction(atributo));
-  });
-    
-  it('debería devolver false para cuando se imprima en consola el string "no hay atributo"',()=>{
-    chai.assert.equal(false, filterLibrary.greyFunction('no hay atributo'));
-  });
-});
+const {
+    window
+} = dom;
+global.document = dom;
+global.window = window;
+global.navigator = {
+    userAgent: 'node.js',
+};
 */
-
-
-/*const assert = require('assert');
-var grayScale = require('../src/app.js');
-
-describe('greyFunction()', ()=> {
-  it('debería retornar true si el container tiene el filter grayscale en 100', ()=>{
-    assert.equal(true, grayScale.greyFunction(console.log('colores en escala de grises'));
-  });
-  it('debería retornar false si el container tiene el filter gray scale en 0', ()=>{
-    assert.equal(false, grayScale.greyFunction('grayscale', 0));
-  });
-});*/

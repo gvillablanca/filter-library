@@ -1,4 +1,4 @@
-const filter = require('src/app');
+const filter = require('src/app.js');
 
 module.exports = {
 

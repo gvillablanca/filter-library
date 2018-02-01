@@ -1,3 +1,4 @@
+//if (typeof window === 'undefined') return;
  const filterLibrary = {};
   //  creo, agrego textos y atributos a los elementos nuevos
   const container = document.getElementById('mainContainer');
@@ -68,20 +69,23 @@
   *  manera el trabajo en el test
   */
   filterLibrary.greyFunction = function (event) {
-    btnGrey.addEventListener('click', ()=>{
-        for (let i = 0; i < imagen.length; i++){      
-          imagen[i].style.filter ='grayscale(100%)';
-          const atributo = imagen[i].getAttribute('style');          
-            if (atributo !== '') {
-              const arrAttr = [atributo];
-              console.log(arrAttr);
+    if(event === null){
+      return 'error';
+    }
+    btnGrey.addEventListener('click', ()=>{ //  todo esto se ejecuta al ejecutar el click sobre el boton con el filtro
+        for (let i = 0; i < imagen.length; i++){//  realizo un for para iterar el filtro sobre todas las imagenes en el arreglo imagenes  
+          imagen[i].style.filter ='grayscale(100%)'; //  aplico filtro a todas las imagen en la posicion que vaya
+          const atributo = imagen[i].getAttribute('style');//  para realizar los test capturo el atributo de los elementos porque si esta el atributo entonces el filtro paso          
+            if (atributo !== '') { //  compruebo que existe el atributo y que no retorne null o vacio
+              const arrAttr = [atributo]; //  lo meto en un arreglo para comprobar en el test
+              console.log(arrAttr); // confirmar que existe imprimo el arreglo
             } else {
-              const arrAttr = [''];
+              const arrAttr = ['']; //  en caso cntrario retorne un array vacio
             }          
         }      
     });
   }    
-  
+  //  aplico cada metodo a todos los filtros seleccionados
   filterLibrary.sepiaFunction = function (event) {
     btnSepia.addEventListener('click', ()=>{
       for (let i = 0; i < imagen.length; i++){
