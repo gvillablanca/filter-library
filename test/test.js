@@ -3,20 +3,20 @@ const expect = chai.expect;
 const sum = require('../src/app-test.js');
 
 describe('Validador de suma', () => {
- it('Debe retornar Error, si uno de los dos parametros no existe', () => {
-   chai.assert.equal(sum.validate(3, null), 'Error');
-   chai.assert.equal(sum.validate(null, 5), 'Error');
-   chai.assert.equal(sum.validate(2, undefined), 'Error');
-   chai.assert.equal(sum.validate(undefined, 10), 'Error');
-   //expect(sum.validate(3, null)).to.be.equal('Error');
- });
+  it('Debe retornar Error, si uno de los dos parametros no existe', () => {
+    chai.assert.equal(sum.validate(3, null), 'Error');
+    chai.assert.equal(sum.validate(null, 5), 'Error');
+    chai.assert.equal(sum.validate(2, undefined), 'Error');
+    chai.assert.equal(sum.validate(undefined, 10), 'Error');
+    // Expect(sum.validate(3, null)).to.be.equal('Error');
+  });
 
- it('Debe devolver la suma de dos numeros', () => {
-   expect(sum.validate(2, 5)).to.be.equal(7);
- });
+  it('Debe devolver la suma de dos numeros', () => {
+    expect(sum.validate(2, 5)).to.be.equal(7);
+  });
 });
 
-//if (typeof window === 'undefined') return;
+// if (typeof window === 'undefined') return;
 /*
 const jsdom = require("jsdom");
 const {JSDOM} = jsdom;
