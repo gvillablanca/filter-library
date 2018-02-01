@@ -40,6 +40,8 @@ Debemos crear un `<div>` y aplicarle un *id="mainContainer"*  el cual contendrá
 #### API(ejemplo)
 `
 >const chai = require('chai');
+>
 >const expect = chai.expect;
-c>onst sum = require('../src/app-test.js');
+>
+>const sum = require('../src/app-test.js');
 `
