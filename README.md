@@ -14,6 +14,7 @@ Plugin que permitirá aplicar filtros en imágenes, estos están definidos como:
 
 ## Dependencias
 #### Dependencias de producción
++ Sublime Text 3
 + Bootstrap 4.0.0
 
 #### Dependencias de desarrollo
